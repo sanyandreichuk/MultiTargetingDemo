@@ -6,7 +6,7 @@
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label
-            x:Name="GreetingLabel"
+            x:Name="AppName"
             FontSize="20"
             TextColor="Black" />
     </StackLayout>

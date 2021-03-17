@@ -9,7 +9,7 @@ namespace MultiTargetingSample
         {
             InitializeComponent();
 
-            GreetingLabel.Text = AppProperties.AppName;
+            AppName.Text = AppProperties.AppName;
         }
     }
 }
