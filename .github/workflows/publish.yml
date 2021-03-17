@@ -22,8 +22,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build
         run: |
-          cd MultiTargetingDemo/MultiTargetingDemo.Core/
+          cd MultiTargetingDemo
           nuget restore
+          cd MultiTargetingDemo/MultiTargetingDemo.Core
           msbuild MultiTargetingDemo.Core.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
       #- name: Publish NuGet
         # You may pin to the exact commit or the version.
