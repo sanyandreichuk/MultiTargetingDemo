@@ -4,7 +4,7 @@
 	  <TargetFrameworks>netstandard2.0;xamarinios10;monoandroid10.0;</TargetFrameworks>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	  <PackageId>MT.Demo</PackageId>
-	  <Version>0.0.1</Version>
+	  <Version>0.0.2</Version>
 	  <Authors>Sanya Andreichuk</Authors>
 	  <Product>MT.Demo</Product>
   </PropertyGroup>
