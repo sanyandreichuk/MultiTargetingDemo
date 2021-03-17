@@ -20,18 +20,22 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      - name: Publish NuGet
+      - name: Build
+        run: |
+          cd MultiTargetingDemo/MultiTargetingDemo.Core/
+          nuget restore
+          msbuild MultiTargetingDemo.Core.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
+      #- name: Publish NuGet
         # You may pin to the exact commit or the version.
         # uses: brandedoutcast/publish-nuget@c12b8546b67672ee38ac87bea491ac94a587f7cc
-        uses: brandedoutcast/publish-nuget@v2.5.5
-        with:
+       # uses: brandedoutcast/publish-nuget@v2.5.5
+       # with:
           # Filepath of the project to be packaged, relative to root of repository
-          PROJECT_FILE_PATH: MultiTargetingDemo/MultiTargetingDemo.Core/MultiTargetingDemo.Core.csproj
+       #   PROJECT_FILE_PATH: MultiTargetingDemo/MultiTargetingDemo.Core/MultiTargetingDemo.Core.csproj
           # NuGet package id, used for version detection & defaults to project name
-          PACKAGE_NAME: MT.Demo
+       #   PACKAGE_NAME: MT.Demo
           # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH
-          VERSION_FILE_PATH: MultiTargetingDemo/MultiTargetingDemo.Core/Version.props
+       #   VERSION_FILE_PATH: MultiTargetingDemo/MultiTargetingDemo.Core/Version.props
           # API key to authenticate with NuGet server
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+       #   NUGET_KEY: ${{secrets.NUGET_API_KEY}}
          
