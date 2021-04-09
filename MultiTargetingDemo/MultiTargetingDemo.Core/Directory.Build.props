@@ -1,0 +1,9 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PackageId>MT.Demo</PackageId>
+    <Version>0.0.2</Version>
+    <Authors>Sanya Andreichuk</Authors>
+    <Product>MT.Demo</Product>
+    <Description>Demo project</Description>
+  </PropertyGroup>
+</Project>
