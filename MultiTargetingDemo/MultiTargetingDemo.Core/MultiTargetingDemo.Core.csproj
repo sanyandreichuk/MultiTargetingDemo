@@ -1,29 +1,29 @@
 <Project Sdk="MSBuild.Sdk.Extras/3.0.22">
 
-  <PropertyGroup>
-	  <TargetFrameworks>netstandard2.0;xamarinios10;monoandroid10.0;</TargetFrameworks>
-	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <PackageId>MT.Demo</PackageId>
-	  <Version>0.0.2</Version>
-	  <Authors>Sanya Andreichuk</Authors>
-	  <Product>MT.Demo</Product>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;xamarinios10;monoandroid10.0;</TargetFrameworks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>MT.Demo</PackageId>
+        <Version>0.0.2</Version>
+        <Authors>Sanya Andreichuk</Authors>
+        <Product>MT.Demo</Product>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<Compile Remove="**\*.netstandard.cs" />
-		<Compile Remove="**\*.android.cs" />
-		<Compile Remove="**\*.ios.cs" />
-	</ItemGroup>
+    <ItemGroup>
+        <Compile Remove="**\*.netstandard.cs" />
+        <Compile Remove="**\*.android.cs" />
+        <Compile Remove="**\*.ios.cs" />
+    </ItemGroup>
 
-	<ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
-		<Compile Include="**\*.netstandard.cs" />
-	</ItemGroup>
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
+        <Compile Include="**\*.netstandard.cs" />
+    </ItemGroup>
 
-	<ItemGroup Condition=" $(TargetFramework.StartsWith('xamarinios')) ">
-		<Compile Include="**\*.ios.cs" />
-	</ItemGroup>
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('xamarinios')) ">
+        <Compile Include="**\*.ios.cs" />
+    </ItemGroup>
 
-	<ItemGroup Condition=" $(TargetFramework.StartsWith('monoandroid')) ">
-		<Compile Include="**\*.android.cs" />
-	</ItemGroup>
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('monoandroid')) ">
+        <Compile Include="**\*.android.cs" />
+    </ItemGroup>
 </Project>
