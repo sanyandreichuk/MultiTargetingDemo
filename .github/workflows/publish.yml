@@ -32,5 +32,6 @@ jobs:
           msbuild MultiTargetingDemo.Core.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release /p:Version=$VERSION
       - name: Publish NuGet
         run: |
+          ls MultiTargetingDemo/MultiTargetingDemo.Core/bin/Release/
           dotnet nuget push MultiTargetingDemo/MultiTargetingDemo.Core/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
 
