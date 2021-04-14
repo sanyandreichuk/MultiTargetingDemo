@@ -29,8 +29,8 @@ jobs:
           cd MultiTargetingDemo
           nuget restore
           cd MultiTargetingDemo.Core
-          msbuild MultiTargetingDemo.Core.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release /p:Version=$VERSION /p:OutputPath=../../Core
+          msbuild MultiTargetingDemo.Core.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release /p:Version=$VERSION
       - name: Publish NuGet
         run: |
-          dotnet nuget push Core/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
+          dotnet nuget push MultiTargetingDemo/MultiTargetingDemo.Core/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
 
